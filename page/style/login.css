@@ -1,0 +1,129 @@
+body{
+
+    background: url(../img/background.png) no-repeat;
+
+    background-size:auto;
+
+
+}
+
+.login-main{
+
+    position: absolute;
+
+    width: 95%;
+
+    height: 95%;
+
+    top: -10%;
+
+    left: -10%;
+
+    background: rgba(255, 255, 255, 0.6);
+
+}
+.logo{
+    position: absolute;
+    width: 149px;
+    height: 36px;
+    left: 32px;
+    top: 19px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #000000;
+
+    position: relative;
+    z-index: 9999;
+}
+label{
+    font-size: 25px;
+}
+.sign_box{
+
+    position: absolute;
+    width: 61%;
+    height: 10%;
+    left: 39%;
+    top: 20%;
+
+    background: rgba(220, 220, 220, 0.8);
+
+}
+label.sign{
+    padding-left: 15px;
+
+    font-size: 40px;
+}
+
+.login_box{
+    position: absolute;
+    width: 61%;
+    height: 47%;
+    left: 39%;
+    top: 33%;
+
+    background: rgba(220, 220, 220, 0.8);
+}
+.button{
+    position: absolute;
+    width: 20%;
+    height: 12%;
+    left: 80%;
+    top: 85%;
+
+    font-size: 50px;
+
+    background: rgba(220, 220, 220, 0.8);
+
+    text-align: center;
+    border: none;
+}
+.login_info{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+
+    line-height: 1.5;
+}
+
+
+label.pass{
+    padding-left: 2em;
+}
+input{
+    border: none;
+}
+.sign_up{
+    position: absolute;
+    left: 30%;
+    top: 72%;
+}
+.login-middle{
+    position: absolute;
+
+    width: 15%;
+
+    height: 5%;
+
+    top: 85%;
+
+    left: 85%;
+    background: rgba(255, 255, 255, 0.6);
+}
+.login-footer{
+    position: absolute;
+
+    width: 95%;
+
+    height: 15%;
+
+    top: 90%;
+
+    left: -10%;
+    background: rgba(255, 255, 255, 0.6);
+}
