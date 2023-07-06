@@ -1,0 +1,33 @@
+.page_title {
+    font-size: 35px;
+}
+.history_content {
+    width: 327px;
+    height: 240px;
+    border: solid 0.2px #000000;
+}
+
+.history_content_name {
+    position: relative;
+    height: 75px;
+    font-size: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #E3E3E3;
+}
+.history_content_name a{
+    position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%);
+}
+.history_content_day {
+    float: right;
+    margin-right: 5px;
+    font-size: 35px;
+}
+.top-history {
+    background-color: #E3E3E3;
+    font-weight: bold;
+}
