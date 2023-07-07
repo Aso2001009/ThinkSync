@@ -1,15 +1,16 @@
 <?php
   session_start();
+  $user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>ThinkSync</title>
-    <link rel="stylesheet" type="text/css" href="../style/history.css">
+    <link rel="stylesheet" type="text/css" href="/../../css/history.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/top.js"></script>
-  </head>;
+  </head>
   <body>
   <?php
   function connectDB(){
@@ -17,9 +18,14 @@
                  PDO::MYSQL_ATTR_MULTI_STATEMENTS => false,
                  PDO::ATTR_EMULATE_PREPARES => false);
   
-    $db = new PDO("mysql:host=localhost;dbname=thinksync;charset=utf8",
-                  "", "", $opt);
-    return $db;
+    $db = new PDO(
+          'mysql:host=mysql214.phy.lolipop.lan;dbname=LAA1530414-thinksync;charset=utf8',
+          'LAA1530414',
+          'SD3TS',
+        $opt
+      );
+
+      return $db;
   }
   ?>
 
@@ -31,9 +37,9 @@
     try{
       $db = connectDB();
       //logsテーブルとroomsテーブルを結合して、ログインユーザーの会議履歴を取得
-      $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE ueser_id = ? ";
+      $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE logs.user_id = ? ";
       $ps = $db->prepare($sql);
-	    $ps->bindValue(1, $userid, PDO::PARAM_INT);
+	    $ps->bindValue(1, $user_id, PDO::PARAM_INT);
 	    $ps->execute();
 
       // 会議の参加履歴がある場合1件ずつ取り出して表示
@@ -60,14 +66,6 @@
     }
     
     ?>
-
-    <div class="top-footer">
-      <a href="***" class="top-histry">会議履歴を見る</a>
-      <a href="***" class="top-question">お問い合わせ</a>
-      <a href="***" class="top-qa">Q＆A</a>
-      <a href="***" class="top-rule">利用規約</a>
-    </div>
-    
   </div>
   </body>
 </html>
