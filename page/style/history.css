@@ -1,12 +1,12 @@
 .page_title {
     position: fixed;
-    top: 50px;
+    top: 120px;
     margin-left: 280px;
     font-size: 24px;
 }
 .scrollbar_content {
     position: fixed;
-    top: 100px;
+    top: 150px;
     margin-top: 20px;
     margin-left: 300px;
     height: 500px;
