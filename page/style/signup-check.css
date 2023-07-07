@@ -7,7 +7,7 @@
 /*新規登録の枠レイアウト*/
 .form-container {
     width: 50%;
-    height: 70%;
+    height: 60%;
     margin: 0 auto;
     position: absolute;
     top: 20%;
@@ -28,8 +28,7 @@
 
 /*テキストボックスのレイアウト*/
 .form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"]{
+.form-container input[type="email"]{
     width: 50%;
     padding: 5px;
     margin-top: 5px;
@@ -38,8 +37,18 @@
     left: 20%;
 }
 
+/*戻るボタンのレイアウト*/
+.back{
+    margin-top: 10px;
+    padding: 5px;
+    width: auto;
+    position: absolute;
+    top: 100%;
+    left: 5vw;
+}
+
 /*登録ボタンのレイアウト*/
-.form-container input[type="submit"] {
+.reg{
     margin-top: 10px;
     padding: 5px;
     width: auto;
@@ -59,13 +68,5 @@
     width: 50%;
     height: auto;
     position: relative;
-    left: 25%;
-}
-
-/*新規登録のリンク*/
-.signup{
-    color: black;
-    position: relative;
-    top: 3vw;
-    left: 2vw;
+    left: 20%;
 }

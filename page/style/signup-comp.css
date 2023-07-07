@@ -1,0 +1,26 @@
+/*ヘッダーの調整*/
+.header img{
+    width: 15%;
+    height: 15%;
+}
+
+/*新規登録の枠レイアウト*/
+.form-container {
+    width: 50%;
+    height: 30%;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+
+    border: black 2px solid;
+    padding:10px;
+}
+
+/*手順画像の調整*/
+.tejun{
+    width: 50%;
+    height: auto;
+    position: relative;
+    left: 20%;
+}
