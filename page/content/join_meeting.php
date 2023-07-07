@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/join_meeting.css">
+    <link rel="stylesheet" type="text/css" href="style/join_meeting.css">
 </head>
 <body>
     <div class="top">
