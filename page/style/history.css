@@ -1,10 +1,32 @@
 .page_title {
-    font-size: 35px;
+    position: fixed;
+    top: 50px;
+    margin-left: 280px;
+    font-size: 24px;
+}
+.scrollbar_content {
+    position: fixed;
+    top: 100px;
+    margin-top: 20px;
+    margin-left: 300px;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: auto;
+}
+.history_content_row {
+    display: flex;
 }
 .history_content {
     width: 327px;
     height: 240px;
     border: solid 0.2px #000000;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.history_content:hover {
+    background-color: #E3E3E3;
 }
 
 .history_content_name {
@@ -15,6 +37,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     background-color: #E3E3E3;
+    border-radius: 10px 10px 0 0;
 }
 .history_content_name a{
     position: absolute;
