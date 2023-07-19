@@ -1,6 +1,10 @@
 <?php 
     session_start();
 
+    if($_SESSION['email']==NULL){
+      header('Location: login.php');
+    }
+
     
 //DBの名前は変えてください
     $pdo = new PDO("mysql:host=localhost;dbname=thinksync;charset=utf8",
@@ -13,6 +17,11 @@
         $sql->bindValue(3,$_SESSION['email'],PDO::PARAM_STR);
         $sql->bindValue(4,$_SESSION['password'],PDO::PARAM_STR);
         $sql->execute();
+
+        $_SESSION['user_id'] = $userid;
+        unset($_SESSION['account']);
+        unset($_SESSION['email']);
+        unset($_SESSION['password']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,14 +34,17 @@
   </head>
   <body>
 
+  <div class="logo">
+      <img src="../img/logo.png">
+    </div>
+
     <div class="header">
-      <img src="../style/logos/logo.png">
-      <hr size="5%" color="black" noshade>
+      <img src="../img/header.png">
     </div>
 
     <div class="form-container">
         <h2>登録完了</h2>
-        <img src="../style/logos/tejun3.png" class="tejun">
+        <img src="../img/tejun3.png" class="tejun">
             <h2>3秒後にトップページへ遷移します
                     <meta http-equiv="refresh" content=" 3; url=./">      
     </div>

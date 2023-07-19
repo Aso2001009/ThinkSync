@@ -1,4 +1,10 @@
-<?php session_start() ?>
+<?php 
+  session_start(); 
+
+  if($_SESSION['email']==NULL){
+    header('Location: login.php');
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,14 +16,17 @@
   </head>
   <body>
 
+  <div class="logo">
+      <img src="../img/logo.png">
+    </div>
+
     <div class="header">
-      <img src="../style/logos/logo.png">
-      <hr size="5%" color="black" noshade>
+      <img src="../img/header.png">
     </div>
 
     <div class="form-container">
         <h2>入力内容の確認</h2>
-        <img src="../style/logos/tejun2.png" class="tejun">
+        <img src="../img/tejun2.png" class="tejun">
         <form method="post" action="signup-comp.php" class="regist">
             <label for="account_name">アカウント名:</label>
             <input type="text" name="account_name" id="account_name" value="<?php echo $_SESSION['account'] ?>" readonly="readonly">

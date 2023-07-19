@@ -25,14 +25,17 @@ function reg(){
   </head>
   <body>
 
+    <div class="logo">
+      <img src="../img/logo.png">
+    </div>
+
     <div class="header">
-      <img src="../style/logos/logo.png">
-      <hr size="5%" color="black" noshade>
+      <img src="../img/header.png">
     </div>
 
     <div class="form-container">
         <h2>新規登録</h2>
-        <img src="../style/logos/tejun1.png" class="tejun">
+        <img src="../img/tejun1.png" class="tejun">
         <form method="post" action="signup.php" class="regist">
             <label for="account_name">アカウント名:</label>
             <input type="text" name="account_name" id="account_name" required>
