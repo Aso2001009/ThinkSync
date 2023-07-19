@@ -6,13 +6,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ThinkSync</title>
+    <title>ThinkSync -履歴一覧-</title>
     <link rel="stylesheet" type="text/css" href="/../../css/history.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../script/top.js"></script>
+    <script type="text/javascript" src="../script/history.js"></script>
   </head>
   <body>
-
     <?php
       function connectDB(){
       $opt = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -29,16 +28,20 @@
         return $db;
       }
     ?>
-
 <a class="page_title">会議履歴</a>
 
     <div class="scrollbar_content">
 
       <?php
+      if($user_id == null){
+        header('Location: ../login.php');//
+        exit();
+      }
+
       try{
         $db = connectDB();
         //logsテーブルとroomsテーブルを結合して、ログインユーザーの会議履歴を取得
-        $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE logs.user_id = ? ";
+        $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE logs.user_id = ? ORDER BY logs.end DESC";
         $ps = $db->prepare($sql);
 	      $ps->bindValue(1, $user_id, PDO::PARAM_INT);
 	      $ps->execute();
@@ -51,11 +54,12 @@
             echo '</div>'; // 3列ごとに行を閉じる
             echo '<div class="history_content_row">'; // 新しい行を開始
           }
-
+          echo '<a href="./history_detail.php?id='.$row['room_id'].'">';
           echo '<div class="history_content">';
           echo '<div class="history_content_name"><a>' . $row['title'] . '</a></div>';
           echo '<div class="history_content_day"><a>' . $row['end'] . '</a></div>';
           echo '</div>';
+          echo '</a>';
 
           $counter++;
         }
