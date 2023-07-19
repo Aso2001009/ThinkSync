@@ -1,8 +1,14 @@
 /*ヘッダーの調整*/
-.header img{
+.logo img{
     width: 15%;
     height: 15%;
 }
+.header img{
+    width: 100%;
+    height: 90%;
+    position: relative;
+    top: -9vw;
+  }
 
 /*新規登録の枠レイアウト*/
 .form-container {
@@ -69,3 +75,62 @@
     top: 3vw;
     left: 2vw;
 }
+
+/*========= 流れるテキスト ===============*/
+
+/*全共通*/
+
+.slide-in {
+    overflow: hidden;
+      display: inline-block;
+  }
+  
+  .slide-in_inner {
+    display: inline-block;
+  
+  }
+  
+  /*左右のアニメーション*/
+  .rightAnime{
+      opacity: 0;/*事前に透過0にして消しておく*/
+      border: solid 2px;
+  }
+  
+  .slideAnimeLeftRight {
+    animation-name:slideTextX100;
+    animation-duration:1.2s;
+    animation-fill-mode:forwards;
+      opacity: 0;
+  }
+  
+  @keyframes slideTextX100 {
+    from {
+    transform: translateX(-100%); /*要素を左の枠外に移動*/
+          opacity: 0;
+    }
+  
+    to {
+    transform: translateX(0);/*要素を元の位置に移動*/
+      opacity: 1;
+    }
+  }
+  
+  .slideAnimeRightLeft {
+    animation-name:slideTextX-100;
+    animation-duration:1.2s;
+    animation-fill-mode:forwards;
+      opacity: 0;
+  }
+  
+  
+  @keyframes slideTextX-100 {
+    from {
+    transform: translateX(100%);/*要素を右の枠外に移動*/
+      opacity: 0;
+    }
+  
+    to {
+    transform: translateX(0);/*要素を元の位置に移動*/
+      opacity: 1;
+    }
+  }
