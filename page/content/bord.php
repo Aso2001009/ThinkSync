@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    require_once '../../function/database.php';
+    
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST['exit'])){
+            UpdateRoom($_GET['room_id']);
+            header('Location: ./history_detail.php');
+            exit();
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +21,14 @@
             border: 1px solid #000;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="./css/bord.css">
+    <link rel="stylesheet" type="text/css" href="../css/bord.css">
 </head>
 <body>
     <!-- 画面上部-->
     <div class="top">
         <!-- 画面左上アプリロゴ画像-->
         <div class="logo">
-            <img src="img/logo.png" alt="アプリロゴ">
+            <img src="../img/logo.png" alt="アプリロゴ" width="250px" height="75px">
         </div>
     </div>
     <!--画面左部-->
@@ -28,18 +41,22 @@
         <!--メモ-->
         <div class="memo">
             <label>メモ</label>
+            <h2>作成途中...</h2>
         </div>
 
         <!--参加者表示-->
         <div class="member">
             <label>参加者</label>
+            <h2>作成途中...</h2>
         </div>
         <!--退出ボタン-->
-        <div class="exit">
-            <!--退出ボタンを押したらトップページに戻る-->
-            <button type="button" onclick="location.href='top.php'">退出</button>
-
-        </div>
+        
+        <!--退出ボタンを押したらトップページに戻る-->
+        <form action="" method="post">
+            <div class="exit">
+                <button type="submit" class="button" name="exit">退出</button>            
+            </div>
+        </form>
         <!--タイマー 、自分で何分とか設定できる感じで-->
         <div class="timer">
             <div class="time" id="timer">
@@ -71,7 +88,7 @@
             <input type="color" id="color-picker">
         </div>
     </div>
-    <script src="./script/bord.js"></script>
-    <script src="./script/timer.js"></script>
+    <script src="../script/bord.js"></script>
+    <script src="../script/timer.js"></script>
 </body>
 </html>

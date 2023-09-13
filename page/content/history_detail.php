@@ -1,16 +1,14 @@
 <?php
   session_start();
-  $user_id = 59;
-  //$user_id = $_SESSION['user_id'];
-  $room_id = "aaaaa";
-  //$room_id = $_GET['room_id'];
+  require_once 'common.php';
+  $room_id = $_GET['room_id'];
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>ThinkSync -履歴詳細-</title>
-    <link rel="stylesheet" type="text/css" href="../style/history_detail.css">
+    <link rel="stylesheet" type="text/css" href="../css/history_detail.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/history_detail.js"></script>
   </head>
@@ -39,7 +37,7 @@
         FROM rooms r LEFT JOIN logs l ON r.room_id = l.room_id LEFT JOIN users u ON l.user_id = u.user_id 
         WHERE r.room_id = ? GROUP BY r.room_id, r.title, r.end, r.temp";
         $ps = $db->prepare($sql);
-	      $ps->bindValue(1, $room_id, PDO::PARAM_INT);
+	      $ps->bindValue(1, $room_id, PDO::PARAM_STR);
 	      $ps->execute();
         $row = $ps->fetch();
 

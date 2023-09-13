@@ -3,7 +3,7 @@ session_start();
 //ログアウト処理
 if (isset($_GET['logout'])) {
     session_destroy();
-    header('Location: common.php');
+    header('Location: top.php');
     exit;
 }
 
@@ -13,7 +13,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <title>ThinkSync</title>
-    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
     <!--画面左上アプリロゴ画像-->

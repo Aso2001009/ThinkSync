@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once 'common.php';
   $user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
   <head>
     <meta charset="UTF-8">
     <title>ThinkSync -履歴一覧-</title>
-    <link rel="stylesheet" type="text/css" href="/../../css/history.css">
+    <link rel="stylesheet" type="text/css" href="../css/history.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/history.js"></script>
   </head>
@@ -34,14 +35,14 @@
 
       <?php
       if($user_id == null){
-        header('Location: ../login.php');//
+        header('Location: login.php');
         exit();
       }
 
       try{
         $db = connectDB();
         //logsテーブルとroomsテーブルを結合して、ログインユーザーの会議履歴を取得
-        $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE logs.user_id = ? ORDER BY logs.end DESC";
+        $sql = "SELECT * FROM logs JOIN rooms ON logs.room_id = rooms.room_id WHERE logs.user_id = ? ORDER BY rooms.end DESC";
         $ps = $db->prepare($sql);
 	      $ps->bindValue(1, $user_id, PDO::PARAM_INT);
 	      $ps->execute();
@@ -54,13 +55,12 @@
             echo '</div>'; // 3列ごとに行を閉じる
             echo '<div class="history_content_row">'; // 新しい行を開始
           }
-          echo '<a href="./history_detail.php?id='.$row['room_id'].'">';
           echo '<div class="history_content">';
+          echo '<a class="index" href="./history_detail.php?room_id='.$row['room_id'].'"></a>';
           echo '<div class="history_content_name"><a>' . $row['title'] . '</a></div>';
           echo '<div class="history_content_day"><a>' . $row['end'] . '</a></div>';
           echo '</div>';
-          echo '</a>';
-
+          
           $counter++;
         }
 

@@ -4,20 +4,20 @@
   <head>
     <meta charset="UTF-8">
     <title>ThinkSync</title>
-    <link rel="stylesheet" type="text/css" href="../style/signup-check.css">
+    <link rel="stylesheet" type="text/css" href="../css/signup-check.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/signup-check.js"></script>
   </head>
   <body>
 
     <div class="header">
-      <img src="../style/logos/logo.png">
+      <img src="../img/logo.png">
       <hr size="5%" color="black" noshade>
     </div>
 
     <div class="form-container">
         <h2>入力内容の確認</h2>
-        <img src="../style/logos/tejun2.png" class="tejun">
+        <img src="../img/tejun2.png" class="tejun">
         <form method="post" action="signup-comp.php" class="regist">
             <label for="account_name">アカウント名:</label>
             <input type="text" name="account_name" id="account_name" value="<?php echo $_SESSION['account'] ?>" readonly="readonly">

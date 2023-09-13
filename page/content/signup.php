@@ -11,7 +11,13 @@ function reg(){
   }else{
     //パスワードが一致しなかったときの処理
     header('Location: signup.php');
+    exit();
   }
+}
+?>
+<?php 
+if(!empty($_POST['confirm_password'])){
+  reg();
 }
 ?>
 <!DOCTYPE html>
@@ -19,20 +25,20 @@ function reg(){
   <head>
     <meta charset="UTF-8">
     <title>ThinkSync</title>
-    <link rel="stylesheet" type="text/css" href="../style/signup.css">
+    <link rel="stylesheet" type="text/css" href="../css/signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/signup.js"></script>
   </head>
   <body>
 
     <div class="header">
-      <img src="../style/logos/logo.png">
+      <img src="../img/logo.png">
       <hr size="5%" color="black" noshade>
     </div>
 
     <div class="form-container">
         <h2>新規登録</h2>
-        <img src="../style/logos/tejun1.png" class="tejun">
+        <img src="../img/tejun1.png" class="tejun">
         <form method="post" action="signup.php" class="regist">
             <label for="account_name">アカウント名:</label>
             <input type="text" name="account_name" id="account_name" required>
@@ -50,9 +56,3 @@ function reg(){
     </div>
 </body>
 </html>
-
-<?php 
-if(!empty($_POST['confirm_password'])){
-  reg();
-}
-?>
