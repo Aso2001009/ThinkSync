@@ -27,8 +27,14 @@
   
   /* アプリロゴをもっと左に寄せて大きさ65%ぐらいに */
   .top img {
-    width: 65%;
-    margin-left: -20px;
+    /*width: 65%;
+    margin-left: -20px;*/
+    position: fixed;
+    top: 10px;
+    left: 0;
+    pointer-events:none;
+    user-select: none;
+    z-index: 1;
   }
   
   /* 画面左部 */
