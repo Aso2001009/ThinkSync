@@ -1,0 +1,125 @@
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  pointer-events:none;
+  user-select: none;
+  z-index: 1;
+}
+
+.line1 {
+  position: fixed;
+  top: 48px;
+  left: 1315px;
+  width: 135px;
+  height: 1.5px;
+  background-color: #000;
+  margin: 0 auto;
+  padding: 0;
+  transform: rotate(130deg);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.line2 {
+  position: fixed;
+  top: 62px;
+  left: 1350px;
+  width: 100px;
+  height: 1.5px;
+  background-color: #000;
+  margin: 0 auto;
+  padding: 0;
+  transform: rotate(130deg);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.login-button {
+  position: fixed;
+  top: 50px;
+  left: 1250px;
+  width: 200px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 3px;
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.login-button:hover {
+  background-color:rgba(227, 227, 227, 1);
+  box-shadow:0px 5px 5px #ccc inset;
+}
+
+.line3 {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #000;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.line4 {
+  position: fixed;
+  top: 100px;
+  left: 187px;
+  width: 1.5px;
+  height: 90%;
+  background-color: #000;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.banner {
+  position: fixed;
+  top: 121px;
+  left: 0;
+  pointer-events:none;
+  user-select: none;
+}
+
+.app-links {
+  position: absolute;
+  width: 100%; /* リンクの幅を100%に設定 */
+  top: 30%; /* 上に配置するための位置調整 */
+  transform: translateY(-50%); /* 上下中央に配置するための位置調整 */
+  display: flex;
+  flex-direction: column;
+  pointer-events: all;
+  justify-content: space-between; /* リンクの間に均等なスペースを追加 */
+  align-items: center; /* リンクを中央に配置 */
+}
+/*最初のリンクの上に線を追加*/
+.app-links a:first-child {
+  border-top: 1px solid #000000;
+}
+.app-links a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  /*文字を太く*/
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #000000;
+  width: 100%; /* リンクの横幅を100%に設定 */
+  box-sizing: border-box; /* ボックスサイズをborder-boxに設定 */
+}
+
+.app-links a:hover {
+  background-color:rgba(227, 227, 227, 0.4);
+  box-shadow:0px 5px 5px #ccc inset;
+}

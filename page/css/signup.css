@@ -1,0 +1,63 @@
+/*ヘッダーの調整*/
+.header img{
+    width: 15%;
+    height: 15%;
+}
+
+/*新規登録の枠レイアウト*/
+.form-container {
+    width: 50%;
+    height: 70%;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+
+    border: black 2px solid;
+    padding:10px;
+}
+
+/*テキストのブロック指定*/
+.form-container label {
+    display: block;
+    margin-top: 10px;
+    font-size: 120%;
+    position: relative;
+    left: 8vw;
+}
+
+/*テキストボックスのレイアウト*/
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"]{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset;
+    position: relative;
+    left: 20%;
+}
+
+/*登録ボタンのレイアウト*/
+.form-container input[type="submit"] {
+    margin-top: 10px;
+    padding: 5px;
+    width: auto;
+    position: absolute;
+    top: 100%;
+    right: 5vw;
+}
+
+/*テキストボックスの位置調整*/
+.regist{
+    position: relative;
+    top: 3vw;
+}
+
+/*手順画像の調整*/
+.tejun{
+    width: 50%;
+    height: auto;
+    position: relative;
+    left: 20%;
+}
