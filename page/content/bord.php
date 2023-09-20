@@ -14,13 +14,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="utf-8" />
     <title>ホワイトボード</title>
     <style>
         #whiteboard {
             border: 1px solid #000;
         }
     </style>
+    <!DOCTYPE html>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script><script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script><script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script type="text/babel" src="../script/memo.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/bord.css">
 </head>
 <body>
@@ -28,7 +31,7 @@
     <div class="top">
         <!-- 画面左上アプリロゴ画像-->
         <div class="logo">
-            <img src="../img/logo.png" alt="アプリロゴ" width="250px" height="75px">
+            <img src="../img/logo.png" alt="アプリロゴ" width="10%">
         </div>
     </div>
     <!--画面左部-->
@@ -41,7 +44,7 @@
         <!--メモ-->
         <div class="memo">
             <label>メモ</label>
-            <h2>作成途中...</h2>
+            <div id="root" />
         </div>
 
         <!--参加者表示-->
@@ -79,14 +82,8 @@
     </div>
     <!--ホワイトボード-->
     <div class="bord" style="position: relative;">
-        <canvas id="whiteboard" height="580" width="1125"></canvas>
-        <label for="eraser-checkbox" style="position: absolute; bottom: 10px; left: 10px;">
-            <input type="checkbox" id="eraser-checkbox"> 消しゴムモード
-        </label>
-        <button id="clear-button" style="position: absolute; bottom: 10px; left: 100px;">全消去</button>
-        <div style="position: absolute; bottom: 10px; left: 200px;">
-            <input type="color" id="color-picker">
-        </div>
+        
+  
     </div>
     <script src="../script/bord.js"></script>
     <script src="../script/timer.js"></script>
