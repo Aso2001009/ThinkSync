@@ -56,16 +56,17 @@
   
   /* メモ、テンプレートとの間に5px余白をつける */
   .left .memo {
-    top: 55px;
+    top: 2vh;
     width: 209px;
     height: 200px;
     flex-shrink: 0;
-    position: absolute;
+    position: relative;
     background-color: #EFEFEF;
+    z-index: 99;
   }
   /*メンバー*/
   .member{
-    top: 260px;
+    top: 29vh;
     width: 209px;
     height: 240px;
     flex-shrink: 0;
@@ -126,10 +127,17 @@
         /* その他のスタイルを追加 */
       }
   .bord {
-    width: 1125px;
-    height: 580px;
+    width: 85vw;
+    height: 90vh;
     flex-shrink: 0;
     background: #EFEFEF;
     position: absolute;
-    left: 206px;
+    left: 15vw;
+    top: -33.5vh;
+  }
+
+  .memos{
+    background-color: rgb(230, 255, 247);
+    color:black;
+    border: solid 1px;
   }
