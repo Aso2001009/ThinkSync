@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>test</title>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      mdclick();
+      createTable(9, 9);
+    }
+  </script>
+  <div class="toggle_button" onclick="mdclick()">
+    <input id="toggle" class="toggle_input" type='checkbox'/>
+    <label for="toggle" class="toggle_label"></label>
+  </div>
+  <br>
+  <div id="table-container"></div>
+</body>
+</html>
