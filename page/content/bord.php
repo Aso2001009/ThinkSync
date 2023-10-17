@@ -22,8 +22,10 @@
         }
     </style>
     <!DOCTYPE html>
+    <script src="../script/mandara.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script><script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script><script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script type="text/babel" src="../script/memo.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="../css/bord.css">
 </head>
 <body>
@@ -31,9 +33,11 @@
     <div class="top">
         <!-- 画面左上アプリロゴ画像-->
         <div class="logo">
-            <img src="../img/logo.png" alt="アプリロゴ" width="10%">
+            <img src="../img/logo.png" alt="アプリロゴ" width="250px" height="75px">
         </div>
+        <div class="header-line"></div>
     </div>
+
     <!--画面左部-->
     <div class="left">
         <!--ドロップダウンメニューで図形のテンプレートを呼び出す-->
@@ -80,11 +84,30 @@
             </div>
         </div>
     </div>
+
     <!--ホワイトボード-->
     <div class="bord" style="position: relative;">
+
+        <!--表作成-->
+        <script src="../script/mandara.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/mandara.css">
+
+        <script>
+        window.onload = function() {
+            mdclick();
+            createTable(9, 9);
+        }
+        </script><br>
         
-  
+        <div class="toggle_button" onclick="mdclick()">
+            <input id="toggle" class="toggle_input" type='checkbox'/>
+            <label for="toggle" class="toggle_label"></label>
+        </div><br>
+        <div id="table-container"></div>
+        <!--ここまで-->
+
     </div>
+
     <script src="../script/bord.js"></script>
     <script src="../script/timer.js"></script>
 </body>
