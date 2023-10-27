@@ -1,16 +1,17 @@
 .body {
-    width: 100%;
-    height: 100%;
-    background: #FFF;
-  }
+  width: 100%;
+  height: 99%;
+  background: #FFF;
+  margin: 1 auto;
+}
   
   /* PC画面の幅に合わせてページを固定するスタイル */
   @media screen and (max-width: 1440px) {
     .body {
       width: 100%;
-      height: 100%;
+      height: 99%;
       max-width: 1440px;
-      margin: 0 auto;
+      margin: 1 auto;
     }
   }
   
@@ -25,50 +26,57 @@
     padding: 0 20px;
   }
   
-  /* アプリロゴをもっと左に寄せて大きさ65%ぐらいに */
-  .top img {
-    /*width: 65%;
-    margin-left: -20px;*/
-    position: fixed;
-    top: 10px;
+  /* アプリロゴ */
+  .img {
+    position: absolute;
+    top: 10%;
     left: 0;
     pointer-events:none;
     user-select: none;
-    z-index: 1;
   }
   
   /* 画面左部 */
   .left {
-    width: 209px;
-    height: 580px;
+    width: 30%;
+    height: 100%;
     flex-shrink: 0;
     position: absolute;
     left: 0;
   }
   
   /* テンプレート */
-  .left .dropdown {
-    width: 209px;
-    height: 50px;
+  .dropdown {
+    z-index: 99;
+    width: 43%;
+    height: 13%;
     flex-shrink: 0;
     background-color: #EFEFEF;
   }
   
-  /* メモ、テンプレートとの間に5px余白をつける */
-  .left .memo {
+  /* メモ */
+  .memo {
     top: 2vh;
-    width: 209px;
-    height: 200px;
+    width: 43%;
+    height: 35%;
     flex-shrink: 0;
     position: relative;
     background-color: #EFEFEF;
     z-index: 99;
   }
+
+  .memo-button{
+    background: none;
+    font-size: 15px;
+    color:#2e25cf;
+    cursor: pointer;
+    border:none;
+  }
+
   /*メンバー*/
   .member{
-    top: 29vh;
-    width: 209px;
-    height: 240px;
+    top: 36vh;
+    width: 100%;
+    height: 80%;
     flex-shrink: 0;
     position: absolute;
     background-color: #EFEFEF;
@@ -76,7 +84,7 @@
   /*退出*/
   .exit{
     top: 505px;
-    width: 209px;
+    width: 100%;
     height: 35px;
     flex-shrink: 0;
     position: absolute;
@@ -84,60 +92,118 @@
   }
   /*ボタンをexitの幅に合わせて透明化*/
     .exit button{
-        width: 209px;
-        height: 35px;
-        background-color: transparent;
+      width: 100%;
+      height: 35px;
+      color:#FFF;
+      font-size: 20px;
+      background-color: transparent;
     }
 
   /*タイマー*/
     .timer{
-        top: 545px;
-        width: 209px;
-        height: 35px;
-        flex-shrink: 0;
-        position: absolute;
-        background-color: #EFEFEF;
+      top: 545px;
+      width: 100%;
+      height: 35px;
+      flex-shrink: 0;
+      position: absolute;
+      background-color: #EFEFEF;
     }
     /*ボタンをtimerの幅に合わせて透明化、重なってる要素の最前列に来るように*/
     .timer button{
-        width: 209px;
-        height: 35px;
-        background-color: transparent;
-        position: absolute;
+      width: 100%;
+      height: 35px;
+      background-color: transparent;
+      position: absolute;
     }
     /*時間をdivタイマーの枠内に調整、ボタンが押せるように後ろに配置*/
     .time{
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 209px;
-        height: 35px;
-        text-align: center;
-        line-height: 35px;
-        font-size: 20px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      font-size: 20px;
     }
     /*タイマー設定のポップアップを画面の中央に*/
     #settings-popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: none;
-        z-index: 999; /* 他の要素よりも手前に表示 */
-        /* その他のスタイルを追加 */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      z-index: 999; /* 他の要素よりも手前に表示 */
+      /* その他のスタイルを追加 */
       }
-  .bord {
-    width: 85vw;
-    height: 90vh;
+    .bord {
+      width: 85vw;
+    height: 96vh;
     flex-shrink: 0;
     background: #EFEFEF;
     position: absolute;
-    left: 15vw;
-    top: -33.5vh;
-  }
+    left: 13.5vw;
+    top: -47.5vh;
+    }
 
-  .memos{
-    background-color: rgb(230, 255, 247);
-    color:black;
-    border: solid 1px;
-  }
+    .memos{
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      color: #5d627b;
+      background: white;
+      border-top: solid 5px #5d627b;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+      height: 25%;
+      width: 10%;
+      z-index: 5;
+    }
+    .memoDelete{
+      color: black;
+      font-size: 110%;
+      border: none;
+      background: transparent;
+    }
+    .memotext{
+      resize: none;
+      width:100%;
+      height:75%;
+    }
+    /*まんだら*/
+    table {
+      border-collapse: collapse;
+      width: 80vw;
+      height: 80vh;
+      margin: auto;
+      z-index: 1;
+      border: 4px solid #000;
+    }
+    td {
+      width: 9.09%;
+      height: 9.09%;
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid #000;
+    }
+    /* SWOT分析追加部分 */
+    .swotstyle_row{
+      display: flex;
+    }
+    .swotstyle{
+      border: 1px solid #000000;
+      background: #EFEFEF;
+      position: relative;
+      width: 80vw;
+      height: 45vh;
+      font-size: 24px;
+    }
+    #after-button{
+      position: relative;
+      top:30vh;
+    }
+    .memoArea{
+      z-index: 1;
+    }
+
+    .radio{
+      z-index: 2;
+    }

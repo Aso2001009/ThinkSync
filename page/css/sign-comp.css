@@ -1,0 +1,93 @@
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    user-select: none;
+    z-index: 1;
+  }
+  
+  .line1 {
+    position: fixed;
+    top: 48px;
+    right: 4.5%;
+    width: 135px;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line2 {
+    position: fixed;
+    top: 62px;
+    right:4.3%;
+    width: 100px;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line3 {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /*新規登録の枠レイアウト*/
+  .form-container {
+      width: 50%;
+      height: 60%;
+      margin: 0 auto;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+  
+      border: black 2px solid;
+      padding:10px;
+  }
+  
+  h2 {
+      font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+      font-size: 32px; /* フォントサイズを調整 */
+      color: #333; /* テキストのカラーを指定 */
+      text-align: center; /* テキストを中央寄せにする */
+      margin-top: 10px; /* タイトルの上のマージンを追加 */
+      letter-spacing: 2px; /* 文字間隔を調整 */
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); /* テキストに影を追加 */
+  pointer-events:none;
+  }
+  
+  /*テキストのブロック指定*/
+  .form-container label {
+      display: block;
+      margin-top: 10px;
+      font-size: 120%;
+      position: relative;
+      left: 8vw;
+      top: -3vw; /*変更点*/
+  }
+  
+  
+  
+  /*手順画像の調整*/
+  .tejun{
+      top: -1vw;
+      width: 46%;
+      height: auto;
+      position: relative;
+      left: 25%;
+  }

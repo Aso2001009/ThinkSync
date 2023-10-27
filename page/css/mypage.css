@@ -1,0 +1,136 @@
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    user-select: none;
+    z-index: 1;
+  }
+  
+  .Polygon{
+    top: 30px;
+  }
+  
+  .line1 {
+    position: fixed;
+    top: 48px;
+    right: 4.5%;
+    width: 135px;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line2 {
+    position: fixed;
+    top: 62px;
+    right:4.3%;
+    width: 100px;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line3 {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .sub {
+  position: fixed;
+  top: 110px;
+  left: 220px;
+  user-select: none;
+  z-index: 1;
+  }
+  
+  .page-title{
+    text-align: center;
+  }
+  
+  
+  /*メイン枠レイアウト*/
+  .box {
+    position: fixed;
+    width: 60%;
+    height: 65%;
+    margin: 0 auto;
+    top: 13vw;
+    left: 22vw;
+    border: black 2px solid;
+    padding:10px;
+    overflow: hidden;
+  }
+
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+  
+  /*要素テキストのブロック指定*/
+  .mypage-text{
+    display: block;
+    margin-top: 3vw;
+    font-size: 150%;
+    position: relative;
+    left: 3vw;
+    white-space: nowrap; /* テキストが折り返されないようにする */
+    width: 10vw; /* 例：固定の幅を設定 */
+  }
+  
+  /*ユーザー情報テキストのブロック指定*/
+  .user-text{
+    display: block;
+    margin-top: 3vw;
+    font-size: 150%;
+    position: relative;
+    overflow: hidden; /* コンテナ外のテキストを非表示にする */
+    text-overflow: ellipsis; /* コンテナ内に収まらない場合に省略記号を表示 */
+    text-align: right;
+    left: 14vw;
+    width: 25vw; /* .mypage-text と同じ幅に設定 */
+  }
+
+  /*遷移ボタンのブロック指定*/
+  .edit-button{
+    display: block;
+    margin-top: 3vw;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 15vw;
+    background-color: rgba(0, 0, 0, 0); /* 0のAlpha値は完全に透明 */
+  }
+  
+  /*アカウント削除ボタンのレイアウト*/
+  .delete-button {
+    margin-top: 10px;
+    padding: 5px;
+    width: auto;
+    position: absolute;
+    top: 25vw; /*変更点*/
+    left: 21vw;
+    background-color: red; /* 赤い背景色 */
+    color: white; /* 白い文字色 */
+    font-size: 30px; /* 文字の大きさ */
+    border: none; /* 枠線を消去 */
+    border-radius: 10px; /* 角を丸くする半径を設定 */
+}

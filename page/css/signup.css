@@ -1,63 +1,148 @@
-/*ヘッダーの調整*/
-.header img{
-    width: 15%;
-    height: 15%;
-}
-
-/*新規登録の枠レイアウト*/
-.form-container {
-    width: 50%;
-    height: 70%;
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    user-select: none;
+    z-index: 1;
+  }
+  
+  .line1 {
+    position: fixed;
+    top: 48px;
+    right: 4.5%;
+    width: 135px;
+    height: 1.5px;
+    background-color: #000;
     margin: 0 auto;
-    position: absolute;
-    top: 20%;
-    left: 20%;
-
-    border: black 2px solid;
-    padding:10px;
-}
-
-/*テキストのブロック指定*/
-.form-container label {
-    display: block;
-    margin-top: 10px;
-    font-size: 120%;
-    position: relative;
-    left: 8vw;
-}
-
-/*テキストボックスのレイアウト*/
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"]{
-    width: 50%;
-    padding: 5px;
-    margin-top: 5px;
-    box-shadow:1px 1px 2px rgba(0, 0, 0, 0.5) inset;
-    position: relative;
-    left: 20%;
-}
-
-/*登録ボタンのレイアウト*/
-.form-container input[type="submit"] {
-    margin-top: 10px;
-    padding: 5px;
-    width: auto;
-    position: absolute;
-    top: 100%;
-    right: 5vw;
-}
-
-/*テキストボックスの位置調整*/
-.regist{
-    position: relative;
-    top: 3vw;
-}
-
-/*手順画像の調整*/
-.tejun{
-    width: 50%;
-    height: auto;
-    position: relative;
-    left: 20%;
-}
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line2 {
+    position: fixed;
+    top: 62px;
+    right:4.3%;
+    width: 100px;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    transform: rotate(130deg);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .line3 {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /*新規登録の枠レイアウト*/
+  .form-container {
+      width: 50%;
+      height: 70%;
+      margin: 0 auto;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+  
+      border: black 2px solid;
+      padding:10px;
+  }
+  
+  h2 {
+      font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+      font-size: 32px; /* フォントサイズを調整 */
+      color: #333; /* テキストのカラーを指定 */
+      text-align: center; /* テキストを中央寄せにする */
+      margin-top: 10px; /* タイトルの上のマージンを追加 */
+      letter-spacing: 2px; /* 文字間隔を調整 */
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); /* テキストに影を追加 */
+  pointer-events:none;
+  }
+  
+  /*テキストのブロック指定*/
+  .form-container label {
+      display: block;
+      margin-top: 10px;
+      font-size: 120%;
+      position: relative;
+      left: 8vw;
+      top: -3vw; /*変更点*/
+  }
+  
+  /*テキストボックスのレイアウト*/
+  .form-container input[type="text"],
+  .form-container input[type="account_name"],
+  .form-container input[type="email"],
+  .form-container input[type="password"]{
+      width: 50%;
+      padding: 7px;
+      margin-top: 5px;
+      font-size: 1.3vw; /* フォントサイズを調整 */
+      border: none; /* 上下左右のボーダーを消す */
+      border-bottom: 1px solid black; /* 下線を設定 */
+      position: relative;
+      left: 20%;
+      outline: none ;
+      top: -3vw; /*変更点*/
+  }
+  
+  .form-container input[type="text"]:focus,
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus {
+      outline: none; /* フォーカスリングを無効にする */
+  }
+  
+  /*登録ボタンのレイアウト*/
+  .form-container input[type="submit"] {
+      margin-top: 10px;
+      padding: 5px;
+      width: auto;
+      position: absolute;
+      top: 16.5vw; /*変更点*/
+      right: 3vw;
+      background-color: transparent; /* 背景色を透明にする */
+      border: none; /* ボーダーを削除 */
+      font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+      font-size: 18px; /* フォントサイズを調整 */
+      font-weight: bold; /* 太字に設定 */
+      color: #333; /* テキストのカラーを指定 */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* テキストに影を追加 */
+      cursor: pointer; /* カーソルをポインターに変更 */
+      border-radius: 50%; /* ボーダーラジウスを50%に設定して楕円形に */
+      transition: background-color 0.3s, color 0.3s; /* ホバー時のアニメーション */
+      
+  }
+  
+  .form-container input[type="submit"]:hover {
+      background-color: #0073e6; /* ホバー時の背景色を設定 */
+      color: #fff; /* ホバー時のテキストカラーを設定 */
+      border-radius: 50%; /* ホバー時に楕円形に変更 */
+      transition: background-color 0.3s, color 0.3s; /* border-radiusのアニメーションを無効に */
+  }
+  
+  /*テキストボックスの位置調整*/
+  .regist{
+      position: relative;
+      top: 2vw;
+  }
+  
+  /*手順画像の調整*/
+  .tejun{
+      top: -1vw;
+      width: 46%;
+      height: auto;
+      position: relative;
+      left: 25%;
+  }

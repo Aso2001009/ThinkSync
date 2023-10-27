@@ -1,51 +1,91 @@
-.page_title {
-    position: fixed;
-    top: 120px;
-    margin-left: 280px;
-    font-size: 24px;
-}
-/*画面下部、左の開始位置はバナーの右縦線から*/
-.main {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    height: 87vh;
-    padding: 20px;
-    position: relative; /* 親要素を相対的な位置に設定 */
-    top:100px;
-    left:250px;
-}
-/* 四角で囲んだフォーム */
-.form-container {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 100px;
-}
-  /* spanの文字サイズをh1ぐらいに */
-.form-container span {
-    font-size: 1.5em;
-}
-  /* formを中央揃え */
-form {
+.sub {
+  position: fixed;
+  top: 110px;
+  left: 220px;
+  user-select: none;
+  z-index: 1;
+  }
+  
+  .page-title{
     text-align: center;
-}
-  /* labelを左詰して、文字数を揃える */
-label {
-    display: inline-block;
-    width: 100px;
-    text-align: left;
-    /*だいぶ周りと間隔をあける*/
-    margin: 50px;
-}
-  /* ボタンの色を白にして、縁は黒、少し大きめに */
-button {
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 5px 10px;
+  }
+  
+  /*メイン枠レイアウト*/
+  .form-container {
+    position: fixed;
+    width: 60%;
+    height: 55%;
     margin: 0 auto;
-}
+    top: 13vw;
+    left: 22vw;
+    border: black 2px solid;
+    padding:10px;
+    overflow: hidden;
+  }
+  
+  /*テキストのブロック指定*/
+  .form-container label {
+    display: block;
+    margin-top: 5vw;
+    font-size: 150%;
+    position: relative;
+    left: 13vw;
+  }
+  
+  .room-label{
+    top:-1vw;
+  }
+  
+  
+  /*テキストボックスのレイアウト*/
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"]{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 18px; /* フォントサイズを調整 */
+    border: none;/* 上下左右のボーダーを消す */
+    border-bottom: 1px solid black;/* 下線を設定 */
+    position: relative;
+    left: 13vw;
+    outline: none ;
+  }
+  
+  .form-container input[type="text"]:focus,
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus {
+    outline: none; /* フォーカスリングを無効にする */
+  }
+  
+  /*登録ボタンのレイアウト*/
+  .form-container input[type="submit"] {
+    margin-top: 10px;
+    padding: 5px;
+    width: auto;
+    position: absolute;
+    top: 22vw; /*変更点*/
+    right: 3vw;
+    background-color: transparent; /* 背景色を透明にする */
+    border: none; /* ボーダーを削除 */
+    font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+    font-size: 26px; /* フォントサイズを調整 */
+    font-weight: bold; /* 太字に設定 */
+    color: #333; /* テキストのカラーを指定 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* テキストに影を追加 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    border-radius: 50%; /* ボーダーラジウスを50%に設定して楕円形に */
+    transition: background-color 0.3s, color 0.3s; /* ホバー時のアニメーション */
+    
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #0073e6; /* ホバー時の背景色を設定 */
+    color: #fff; /* ホバー時のテキストカラーを設定 */
+    border-radius: 50%; /* ホバー時に楕円形に変更 */
+    transition: background-color 0.3s, color 0.3s; /* border-radiusのアニメーションを無効に */
+  }
+
 .error_message{
     color: red;
 }
