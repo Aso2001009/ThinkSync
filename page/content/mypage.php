@@ -15,34 +15,51 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/mypage.css">
-        <title>マイページ</title>
+        <title>ThinkSync -マイページ-</title>
     </head>
-    <body>
-        <h1 class="page-title">マイページ</h1>
-        <div class="box">
-            <!--ユーザー名の表示、変更-->
-            <div class="aco-box">
-            <span class="mypage-text">ユーザー名</span>
-            <span class="user-text"><?=$name?></span>
-            <button type="button" onclick="location.href='./edit-username.php'" class="edit-button"><img src="../img/Page-transition.png" height=45px width=45px/></button>
+<body>
+    <h2 class="sub">マイページ</h2>
+    <div class="box">
+        <div class="user-info">
+            <!-- ユーザー名の表示、変更 -->
+            <div class="info-item">
+                <span class="mypage-text">ユーザー名</span>
+                <span class="user-text"><?=$name?></span>
+                <div class="edit-button">
+                    <a href="./edit-username.php">
+                        <img src="../img/edit_btn_img1.png" alt="ボタン画像" height="45px" width="45px" />
+                    </a>
+                </div>
             </div>
-            <br>
-            <!--メールアドレスの表示、変更-->
-            <div class="aco-box">
-            <span class="mypage-text">メールアドレス</span>
-            <span class="user-text"><?=$mail?></span>
-            <button type="button" onclick="location.href='./passcheck.php?cmd=A'" class="edit-button"><img src="../img/Page-transition.png" height=45px width=45px/></button>
+
+            <!-- メールアドレスの表示、変更 -->
+            <div class="info-item">
+                <span class="mypage-text">メールアドレス</span>
+                <span class="user-text"><?=$mail?></span>
+                <div class="edit-button">
+                    <a href="./passcheck.php?cmd=A">
+                        <img src="../img/edit_btn_img1.png" alt="ボタン画像" height="45px" width="45px" />
+                    </a>
+                </div>
             </div>
-            <br>
-            <!--パスワードの表示、変更-->
-            <div class="aco-box">
-            <span class="mypage-text">パスワード</span>
-            <span class="user-text">********</span>
-            <button type="button" onclick="location.href='./passcheck.php?cmd=B'" class="edit-button"><img src="../img/Page-transition.png" height=45px width=45px/></button>
-            <div class="aco-box">
-            <br>
-            <!--アカウント削除ボタン-->
-            <button type="button" onclick="location.href='./passcheck.php?cmd=C'" class="delete-button">アカウント削除</button>
+
+            <!-- パスワードの表示、変更 -->
+            <div class="info-item">
+                <span class="mypage-text">パスワード</span>
+                <span class="user-text">********</span>
+                <div class="edit-button">
+                    <a href="./passcheck.php?cmd=B">
+                        <img src="../img/edit_btn_img1.png" alt="ボタン画像" height="45px" width="45px" />
+                    </a>
+                </div>
+            </div>
         </div>
-    </body>
-</html>
+
+        <!-- アカウント削除ボタン -->
+        <div class="delete-button-container">
+            <button type="button" onclick="location.href='./passcheck.php?cmd=C'" class="delete-button">
+                アカウント削除
+            </button>
+        </div>
+    </div>
+</body>

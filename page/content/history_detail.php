@@ -1,6 +1,7 @@
 <?php
   session_start();
   require_once 'common.php';
+  require_once '../../function/database.php';
   $room_id = $_GET['room_id'];
 ?>
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
         return $db;
       }
     ?>
-    <a class="page_title">履歴詳細</a>
+    <h2 class="sub">履歴詳細</h2>
     <div class="history_detail_content">
       <?php
         $db = connectDB();

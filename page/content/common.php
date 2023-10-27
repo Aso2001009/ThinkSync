@@ -12,7 +12,6 @@ if (isset($_GET['logout'])) {
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ThinkSync</title>
     <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
@@ -41,6 +40,7 @@ if (isset($_GET['logout'])) {
             <a href="create_meeting.php">会議を作成</a>
             <a href="join_meeting.php">会議に参加</a>
             <a href="history.php">履歴</a>
+            <a href="mypage.php">マイページ</a>
         </div>
         <div class="line4"></div>
     </div>

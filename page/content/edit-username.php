@@ -1,39 +1,43 @@
 <?php
 session_start();
-    //require_once 'common.php';
+    require_once 'common.php';
     require_once '../../function/database.php';
     if(!isset($_SESSION['user_id'])){
         header("Location: ./login.php");
     }
-    //ユーザー名の取得
-    $name = SelectName($_SESSION['user_id']);
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //ユーザー名更新
-        $name = $_POST['name'];
+        $name = $_POST['new_name'];
         UpdateName($_SESSION['user_id'],$name);
-        header('Location: mypage.php');
-        exit();
+    }
+    //ユーザー名の取得
+    $name = SelectName($_SESSION['user_id']);
+    if($name == null){
+        $name = '未設定';
     }
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/edit-username.css">
-        <title>マイページ</title>
-    </head>
-    <body>
-        <h1 class="page-title">マイページ</h1>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/edit-username.css">
+    <title>ThinkSync -ユーザー名の変更-</title>
+</head>
+<body>
+    <h2 class="sub">マイページ</h2>
+    <div class="form-container">
+        <h1 class="page-title">ユーザー名の変更</h1>
         <div class="box">
-        <p>ユーザー名を変更</p>
-        <p>現在のユーザー名</p>
-        <p><?=$name?></p>
-        <form action="" method="POST">
-            <p>新しいユーザー名</p>
-            <input type="text" class="name" name="name" required placeholder="ユーザー名">
-            <button type="button" onclick="location.href='./mypage.php'" class="cancel">キャンセル</button>
-            <button type="submit" class="next-button">完了</button>
-        </form>
+            <label for="email" class="input-label">現在のユーザー名</label>
+            <label for="email" class="input-label"><?= $name ?></label>
+            <form action="" method="POST">
+                <label for="email" class="input-label">新しいユーザー名</label>
+                <input type="text" class="name" name="new_name" required placeholder="ユーザー名">
+                <!-- マイページへ遷移 -->
+                <input type="button" onclick="location.href='./mypage.php'" value="キャンセル" class="back">
+                <input type="submit" name="update_name" value="変更を保存" class="reg">
+            </form>
         </div>
-    </body>
+    </div>
+</body>
 </html>

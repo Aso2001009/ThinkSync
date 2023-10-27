@@ -20,19 +20,18 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/join_meeting.css">
+    <title>ThinkSync -会議に参加-</title>
 </head>
 <body>
-    <p class="page_title">会議に参加<p>
-    <div class="main">
-        <!-- 四角で囲んだフォーム -->
-        <div class="form-container">
-            <span>会議に参加する</span>
-            <p class="error_message"><?=$error_message?></p>    
-            <form action="" method="post">
-                <label for="room_id">ルームID</label>
-                <input type="text" id="room_id" name="room_id" value="" required>
-                <br>
-                <button type="submit">会議にはいる</button>
+    <h2 class="sub">会議に参加</h2>
+    <div class="form-container">
+        <h1 class="page-title">会議に参加する</h1>
+	<p class="error_message"><?=$error_message?></p>
+        <div class="box">
+	<form action="" method="POST">
+            <label for="meeting_title" class="input-label">ルームID</label>
+            <input type="text" id="room_id" name="room_id" required>
+            <input type="submit"value="会議にはいる">
             </form>
         </div>
     </div>

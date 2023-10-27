@@ -17,23 +17,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ThinkSync</title>
-    <link rel="stylesheet" type="text/css" href="../css/signup-comp.css">
+    <title>ThinkSync -新規登録-</title>
+    <link rel="stylesheet" type="text/css" href="../css/signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../script/signup-comp.js"></script>
+    <script type="text/javascript" src="../script/signup.js"></script>
   </head>
   <body>
 
-    <div class="header">
-      <img src="../img/logo.png">
-      <hr size="5%" color="black" noshade>
-    </div>
+    <a href="../content/top.php">
+       <!--画面左上アプリロゴ画像-->
+       <img src="../img/logo.png" class="logo" width="250px" height="75px">
+    </a>
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
 
     <div class="form-container">
-        <h2>登録完了</h2>
+        <h2>Compleate</h2>
         <img src="../img/tejun3.png" class="tejun">
-            <h2>3秒後にトップページへ遷移します
-            <meta http-equiv="refresh" content=" 3; url=./create_meeting.php">
+        <form method="post" action="signup.php" class="regist">
+          <div class="txt">
+
+	    <h2>登録が完了しました</h2>
+
+            <h2>3秒後にトップページへ遷移します</h2>
+		<meta http-equiv="refresh" content=" 3; url=./create_meeting.php">
+            </div>
+        </form>
     </div>
 </body>
 </html>

@@ -5,26 +5,34 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['exit'])){
             UpdateRoom($_GET['room_id']);
-            header('Location: ./history_detail.php');
+            header('Location: history_detail.php?room_id='.$_GET['room_id']);
             exit();
         }
     }
+
+    $room_title = GetRoomTitle($_GET['room_id']);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-    <title>ホワイトボード</title>
+    <title>ThinkSync -<?=$room_title?>-</title>
+    <script>
+        window.onload = function() {
+            mdclick();
+            createTable(3, 3);
+        }
+    </script>
     <style>
         #whiteboard {
             border: 1px solid #000;
         }
     </style>
     <!DOCTYPE html>
-    <script src="../script/mandara.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script><script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script><script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script type="text/babel" src="../script/memo.js"></script>
+    <script src="../script/mandara.js"></script>
     
     <link rel="stylesheet" type="text/css" href="../css/bord.css">
 </head>
@@ -33,7 +41,7 @@
     <div class="top">
         <!-- 画面左上アプリロゴ画像-->
         <div class="logo">
-            <img src="../img/logo.png" alt="アプリロゴ" width="250px" height="75px">
+            <img src="../img/logo.png" alt="アプリロゴ" width="200px" height="">
         </div>
         <div class="header-line"></div>
     </div>
@@ -41,14 +49,20 @@
     <!--画面左部-->
     <div class="left">
         <!--ドロップダウンメニューで図形のテンプレートを呼び出す-->
-        <div class="dropdown">
-            <label>テンプレート</label>
+        <div class="dropdown" onclick="mdclick()">
+            <label>テンプレート</label><br>
+            <label>
+                <input type="radio" name="dropdown" class="radio" id="mandara" checked/>マンダラート
+            </label><br>
+            <label>
+                <input type="radio" name="dropdown" class="radio" id="swot" />SWOT分析
+            </label>
         </div>
 
         <!--メモ-->
         <div class="memo">
             <label>メモ</label>
-            <div id="root" />
+            <div class="memoArea" id="root" />
         </div>
 
         <!--参加者表示-->
@@ -87,25 +101,19 @@
 
     <!--ホワイトボード-->
     <div class="bord" style="position: relative;">
-
-        <!--表作成-->
-        <script src="../script/mandara.js"></script>
-        <link rel="stylesheet" type="text/css" href="../css/mandara.css">
-
-        <script>
-        window.onload = function() {
-            mdclick();
-            createTable(9, 9);
-        }
-        </script><br>
-        
-        <div class="toggle_button" onclick="mdclick()">
-            <input id="toggle" class="toggle_input" type='checkbox'/>
-            <label for="toggle" class="toggle_label"></label>
-        </div><br>
-        <div id="table-container"></div>
-        <!--ここまで-->
-
+        <div id="table-container">
+            <br><br>
+        </div>
+        <div id="swot-container">
+                <div class="swotstyle_row">
+                    <div class="swotstyle">強み(Strength)</div>
+                    <div class="swotstyle">弱み(Weakness)</div>
+                </div>
+                <div class="swotstyle_row">
+                    <div class="swotstyle">機会(Opportunity)</div>
+                    <div class="swotstyle">脅威(Threat)</div>
+                </div>
+            </div>
     </div>
 
     <script src="../script/bord.js"></script>

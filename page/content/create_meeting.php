@@ -23,24 +23,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!DOCTYPE html>
 <html>
 <head>
+    <title>ThinkSync -会議を作成-</title>
     <link rel="stylesheet" type="text/css" href="../css/create_meeting.css">
 </head>
 <body>
-<p class="page_title">会議作成</p>
-    <div class="container">
-        <div class="main">
-            <div class="form-container">
-                <span>会議を作成する</span>
-                <form action="" method="post">
-                    <label for="meeting_title">会議タイトル</label>
-                    <input type="text" id="meeting_title" name="meeting_title" required>
-                    <br>
-                    <label for="room_id">ルームID</label>
-                    <input type="text" id="room_id" name="room_id" value="<?=$room_id?>">
-                    <br>
-                    <button type="submit">会議を始める</button>
-                </form>
-            </div>
+    <h2 class="sub">会議作成</h2>
+    <div class="form-container">
+        <h1 class="page-title">会議を作成する</h1>
+        <div class="box">
+	<form action="" method="POST">
+            <label for="meeting_title" class="input-label">会議タイトル</label>
+            <input type="text" id="meeting_title" name="meeting_title" required>
+                <label for="email" class="room-label">ルームID</label>
+                <input type="text" class="room-label"  id="room_id" name="room_id" value="<?=$room_id?>" readonly>
+                <input type="submit"value="会議を始める">
+            </form>
         </div>
     </div>
 </body>

@@ -29,7 +29,7 @@
         return $db;
       }
     ?>
-<a class="page_title">会議履歴</a>
+<h2 class="sub">履歴一覧</h2>
 
     <div class="scrollbar_content">
 

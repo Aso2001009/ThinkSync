@@ -29,36 +29,37 @@ if(!empty($_POST['password'])){
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>ThinkSync</title>
+    <title>ThinkSync -ログイン-</title>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="../script/login.js"></script>
   </head>
   <body>
 
-    <div class="header">
-      <img src="../img/logo.png">
-      <hr size="5%" color="black" noshade>
-    </div>
+    <a href="../content/top.php">
+       <!--画面左上アプリロゴ画像-->
+       <img src="../img/logo.png" class="logo" width="250px" height="75px">
+    </a>
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
 
     <div class="form-container">
-        <h2>ログイン</h2>
+        <h2>Sign in</h2>
             <?php if (isset($_SESSION['error_message'])) {
                 echo '<p style="color: red;">' . $_SESSION['error_message'] . '</p>';
                 unset($_SESSION['error_message']); // セッションからエラーメッセージを削除
             } ?>
         <form method="post" action="" class="regist">
 
-            <label for="email">メールアドレス:</label>
-            <input type="email" name="email" id="email" required>
+            <label for="email" class="input-label">メールアドレス</label>
+            <input type="email" name="email" id="email" placeholder="メールアドレスを入力">
         
-            <label for="password">パスワード:</label>
-            <input type="password" name="password" id="password" required>
+            <label for="password">パスワード</label>
+            <input type="password" name="password" id="password" placeholder="パスワードを入力">
             <div class="signup"><a href="signup.php">新規登録はこちら</a></div>
-            <input type="submit" value="ログイン" class="reg">
+            <input type="submit" value="Login" class="reg">
         </form>
     </div>
 </body>
 </html>
-
-
